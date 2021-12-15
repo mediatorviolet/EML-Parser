@@ -23,6 +23,7 @@ namespace EML_Parser
     /// </summary>
     public partial class MainWindow : Window
     {
+        string source = Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName + @"\sources";
         public MainWindow()
         {
             InitializeComponent();
@@ -30,10 +31,31 @@ namespace EML_Parser
 
         private void GetEmlFromSources(object sender, RoutedEventArgs e)
         {
-            string path = Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName;
-            var message = MimeMessage.Load(path + @"\sources\TEST.eml");
+            var message = MimeMessage.Load(source + @"\sources\TEST.eml");
 
             Debug.WriteLine(message.To);
+        }
+
+        private void FileList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var message = MimeMessage.Load(FileList.SelectedItem.ToString());
+
+            MessageSubject.Content = message.Subject;
+            MessageFrom.Content = message.From;
+            MessageTo.Content = message.To;
+            MessageBody.Content = message.TextBody;
+            MessageDate.Content = message.Date;
+            MessageAttachment.Content= message.Attachments;
+        }
+
+        private void FileList_Loaded(object sender, RoutedEventArgs e)
+        {
+            string[] filePaths = Directory.GetFiles(source, "*.eml");
+
+            foreach (string filePath in filePaths)
+            {
+                FileList.Items.Add(filePath);
+            }
         }
     }
 }

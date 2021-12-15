@@ -6,8 +6,46 @@
         xmlns:local="clr-namespace:EML_Parser"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Click!" HorizontalAlignment="Left" Margin="497,141,0,0" VerticalAlignment="Top" Click="GetEmlFromSources"/>
+    <Grid Margin="10">
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!--<Button Grid.Row="1" Content="Click!" VerticalAlignment="Top" Click="GetEmlFromSources"/>-->
+        <ListBox x:Name="FileList" SelectionMode="Single" SelectionChanged="FileList_SelectionChanged" Loaded="FileList_Loaded" Grid.Column="0" />
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Name="MessageSubjectLabel" Content="Subject:" Grid.Column="0"/>
+            <Label Name="MessageSubject" Content="" Grid.Column="1"/>
+
+            <Label Name="MessageFromLabel" Content="From:" Grid.Column="0" Grid.Row="1"/>
+            <Label Name="MessageFrom" Content="" Grid.Column="1" Grid.Row="1"/>
+            
+            <Label Name="MessageToLabel" Content="To:" Grid.Column="0" Grid.Row="2"/>
+            <Label Name="MessageTo" Content="" Grid.Column="1" Grid.Row="2"/>
+
+            <Label Name="MessageBodyLabel" Content="Body:" Grid.Column="0" Grid.Row="3"/>
+            <Label Name="MessageBody" Grid.Column="1" Grid.Row="3"/>
+
+            <Label Name="MessageDateLabel" Content="Date:" Grid.Column="0" Grid.Row="4"/>
+            <Label Name="MessageDate" Grid.Column="1" Grid.Row="4"/>
+
+            <Label Name="MessageAttachmentLabel" Content="Attachments:" Grid.Column="0" Grid.Row="5"/>
+            <Label Name="MessageAttachment" Grid.Column="1" Grid.Row="5"/>
+        </Grid>
     </Grid>
 </Window>
