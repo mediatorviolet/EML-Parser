@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MimeKit;
 
 namespace EML_Parser
 {
@@ -23,6 +26,14 @@ namespace EML_Parser
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void GetEmlFromSources(object sender, RoutedEventArgs e)
+        {
+            string path = Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName;
+            var message = MimeMessage.Load(path + @"\sources\TEST.eml");
+
+            Debug.WriteLine(message.To);
         }
     }
 }

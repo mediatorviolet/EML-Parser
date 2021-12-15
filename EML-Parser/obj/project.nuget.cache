@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "YPgMbPMPs+qjW4xbka9GaYTFC2mFzidfOcVq5K7h76Iq6rvNbzHOtinDP7pSXt3EU82oI+fG/rafs3uu6GwLlg==",
+  "dgSpecHash": "UWjhOLX+tD0EcHwlZCYCB3CJ1eZ9TSVGD4mVFHi+YxXoX3bRvG7FhLH4vopArOzCDoOJsQ4nb25Xxb02W2vohw==",
   "success": true,
   "projectFilePath": "C:\\Users\\antoine\\dev\\EML-Parser\\EML-Parser\\EML-Parser.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\antoine\\.nuget\\packages\\mimekit\\3.0.0\\mimekit.3.0.0.nupkg.sha512",
+    "C:\\Users\\antoine\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
+    "C:\\Users\\antoine\\.nuget\\packages\\system.formats.asn1\\5.0.0\\system.formats.asn1.5.0.0.nupkg.sha512",
+    "C:\\Users\\antoine\\.nuget\\packages\\system.security.cryptography.cng\\5.0.0\\system.security.cryptography.cng.5.0.0.nupkg.sha512",
+    "C:\\Users\\antoine\\.nuget\\packages\\system.security.cryptography.pkcs\\5.0.0\\system.security.cryptography.pkcs.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
